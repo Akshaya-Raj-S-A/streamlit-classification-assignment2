@@ -18,22 +18,22 @@ Deploy multiple machine learning classification models on a given dataset. Devel
 Six models trained on the same dataset using consistent preprocessing steps:
 | ML Model Name        | Accuracy   | AUC       | Precision | Recall    | F1        | MCC       |
 |----------------------|------------|-----------|-----------|-----------|-----------|-----------|
-| XGBoost              | 0.93896714 | 0.98102147| 0.93700067| 0.93896714| 0.93709917| 0.82887644|
-| RandomForest         | 0.92488263 | 0.97927623| 0.92164375| 0.92488263| 0.92170391| 0.78748866|
-| DecisionTree         | 0.90140845 | 0.85800072| 0.89831599| 0.90140845| 0.89941113| 0.72516674|
 | LogisticRegression   | 0.88497653 | 0.96139452| 0.88929313| 0.88497653| 0.88547066| 0.68343920|
+| DecisionTree         | 0.90140845 | 0.85800072| 0.89831599| 0.90140845| 0.89941113| 0.72516674|
 | KNN                  | 0.87089202 | 0.93932048| 0.86147318| 0.87089202| 0.86290544| 0.61909073|
-| GaussianNB           | 0.80985915 | 0.87590070| 0.86105199| 0.80985915| 0.82536721| 0.57368060|
+| Naive Bayes          | 0.80985915 | 0.87590070| 0.86105199| 0.80985915| 0.82536721| 0.57368060|
+| Ensemble Model - Random Forest| 0.92488263 | 0.97927623| 0.92164375| 0.92488263| 0.92170391| 0.78748866|
+| Ensemble Model - XGBoost| 0.93896714 | 0.98102147| 0.93700067| 0.93896714| 0.93709917| 0.82887644|
 
 ### Observations (Model Performance)
 | ML Model Name        |            Observation about model performance                       |
 |----------------------|----------------------------------------------------------------------|
-| XGBoost              | Best performing model in terms of overall metrics. It performed the best in terms of accuracy, auc_score, f1_score, and mcc_score|
-| RandomForest         | Very strong performance and almost as close as XGBoost|
-| DecisionTree         | Simple model design but heavier computations, resulting in slowing down model & reduced AUC/MCC|
 | LogisticRegression   | Competitive linear model, good AUC but lower MCC than decision tree|
+| DecisionTree         | Simple model design but heavier computations, resulting in slowing down model & reduced AUC/MCC|
 | KNN                  | Moderate performance, but slightly underperforms compared to Logistic/Tree|
-| GaussianNB           | Lowest accuracy due to independence assumptions in the features|
+| Naive Bayes           | Lowest accuracy due to independence assumptions in the features|
+| Ensemble Model - Random Forest| Very strong performance and almost as close as XGBoost|
+| Ensemble Model - XGBoost| Best performing model in terms of overall metrics. It performed the best in terms of accuracy, auc_score, f1_score, and mcc_score|
 
 A comparison table is generated to `model/artifacts/metrics_summary.csv` and also shown in the app under "All Models".
 
